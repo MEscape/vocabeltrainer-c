@@ -1,4 +1,10 @@
-json/client_secret_549100037309-dol8dlsqq8g2ahngii5o4uk1qsmcdo92.apps.googleusercontent.com.json
+# Secrets and credentials
+json/client_secret_*.json
+*.pem
+*.key
+config.json
+# Keep example config file for reference
+!config_example.json
 
 # Exclude executable directory and all its contents
 Executable Voctrainer/

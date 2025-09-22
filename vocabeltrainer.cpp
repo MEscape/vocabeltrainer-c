@@ -1,5 +1,7 @@
 #include "vocabeltrainer.h"
 #include "ui_vocabeltrainer.h"
+#include "configmanager.h"
+#include <QMessageBox>
 #include "google/cloud/storage/client.h"
 
 using namespace std;
@@ -69,28 +71,51 @@ void vocabeltrainer::moveHome()
 	ui->stackedWidget->setCurrentIndex(0);
 }
 
-void googleVerification() {
-	// Erstellen Sie einen neuen API-Client
-		google::api_client::ApiClient client;
-	
-		// Legen Sie die client ID und das client secret fest
-		client.set_client_id("CLIENT_ID");
-		client.set_client_secret("CLIENT_SECRET");
-	
-		// Legen Sie den API-Schlüssel fest
-		client.set_api_key("API_KEY");
-	
-		// Erstellen Sie eine neue DriveService-Instanz
-		DriveService* service = new DriveService(&client);
-	
-		// Führen Sie eine Anforderung aus, um die Dateien im Google Drive-Konto des Benutzers abzurufen
-		FilesResource::ListRequest request(service);
-		request.set_q("mimeType='application/pdf'");
-		request.Execute();
-	
-		// Ausgabe der Ergebnisse
-		cout << "Dateien im Google Drive:" << endl;
-		for (int i = 0; i < request.result().items().size(); i++) {
-			cout << request.result().items()[i].title() << endl;
-		}
+void VocabelTrainer::googleVerification()
+{
+    ConfigManager& config = ConfigManager::getInstance();
+    
+    // Versuche die Konfiguration zu laden, falls noch nicht geschehen
+    if (!config.isConfigLoaded()) {
+        if (!config.loadConfig()) {
+            qDebug() << "Fehler: Kann Konfigurationsdatei nicht laden!";
+            QMessageBox::critical(this, "Konfigurationsfehler", 
+                "Die Konfigurationsdatei konnte nicht geladen werden.\n"
+                "Bitte stellen Sie sicher, dass eine 'config.json' Datei mit Ihren Google OAuth Credentials existiert.\n"
+                "Verwenden Sie 'config_example.json' als Vorlage.");
+            return;
+        }
+    }
+    
+    // Lade die Credentials aus der Konfiguration
+    QString clientId = config.getGoogleClientId();
+    QString clientSecret = config.getGoogleClientSecret();
+    QString apiKey = config.getGoogleApiKey();
+    
+    // Prüfe ob alle erforderlichen Credentials vorhanden sind
+    if (clientId.isEmpty() || clientSecret.isEmpty() || apiKey.isEmpty()) {
+        qDebug() << "Fehler: Unvollständige Google OAuth Credentials in der Konfiguration!";
+        QMessageBox::critical(this, "Konfigurationsfehler", 
+            "Die Google OAuth Credentials sind unvollständig.\n"
+            "Bitte überprüfen Sie Ihre config.json Datei.");
+        return;
+    }
+
+    google::api_client::ApiClient client;
+    client.set_client_id(clientId.toStdString());
+    client.set_client_secret(clientSecret.toStdString());
+    client.set_api_key(apiKey.toStdString());
+
+    google::api_client::DriveService drive_service(&client);
+
+    google::api_client::DriveService::ListRequest request;
+    request.set_q("mimeType='application/pdf'");
+
+    auto response = drive_service.List(request);
+    if (response.ok()) {
+        qDebug() << "Google Drive files listed successfully";
+        // Process the response
+    } else {
+        qDebug() << "Error listing Google Drive files:" << response.status().message().c_str();
+    }
 }

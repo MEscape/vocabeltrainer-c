@@ -1,0 +1,11 @@
+{
+    "google_oauth": {
+        "client_id": "YOUR_GOOGLE_CLIENT_ID_HERE",
+        "client_secret": "YOUR_GOOGLE_CLIENT_SECRET_HERE",
+        "api_key": "YOUR_GOOGLE_API_KEY_HERE"
+    },
+    "app_settings": {
+        "app_name": "Vokabeltrainer",
+        "version": "1.0"
+    }
+}

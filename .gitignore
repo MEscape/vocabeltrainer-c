@@ -8,3 +8,6 @@ Executable Voctrainer/
 # Qt build files
 *.pro.user
 *.pro.user.*
+
+# IDE files
+.idea/workspace.xml

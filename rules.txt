@@ -1,0 +1,8 @@
+1. Du kannst mehrmals das selbe deutsch Wort mit verschiedenen
+Englischen Wörtern verbinden, aber nicht anders rum.
+
+2. Beim Vokabeln löschen solltest du bevorzugt die Englische Variante des
+Wortes eingeben. Wenn du die Deutsche Variante eingibst du aber 2 Mal das
+selbe deutsche Wort in der Liste hast wird immer das erste gelöscht.
+
+3. Groß- Kleinschreibung ist bei den Vokabelgruppen egal.

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>vocabeltrainer</class>
+ <widget class="QMainWindow" name="vocabeltrainer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1047</width>
+    <height>609</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>vocabeltrainer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">#centralwidget {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(16, 30, 41, 240);
+}</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="launchPage">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(16, 30, 41, 240);</string>
+       </property>
+       <widget class="QWidget" name="layout" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1022</width>
+          <height>582</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgba(2, 65, 118, 255);
+	color: rgba(255, 255, 255, 200);
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+QPushButton:pressed{
+	padding-left: 5px;
+	padding-top: 5px;
+	background-color: rgba(2, 65, 118, 100);
+}
+
+QPushButton:hover,
+QPushButton:focus{
+	background-color: rgba(2, 65, 118, 200);
+}</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="2" column="0">
+          <widget class="QWidget" name="titleOn" native="true">
+           <property name="styleSheet">
+            <string notr="true">max-height: 40px;</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QWidget" name="ph9" native="true"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="on">
+              <property name="styleSheet">
+               <string notr="true">#on{
+color: white;
+font: 20px &quot;MS Shell Dlg 2&quot;;
+font: bold;
+max-width: 155px;
+}</string>
+              </property>
+              <property name="text">
+               <string>Vokabelgruppen</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph10" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QWidget" name="close" native="true">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QWidget" name="ph13" native="true"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="powerOff">
+              <property name="styleSheet">
+               <string notr="true">QPushButton#powerOff{
+color: white;
+font: 20px &quot;MS Shell Dlg 2&quot;;
+font: bold;
+max-width: 95px;
+background-color: transparent;
+}
+
+QPushButton#powerOff:hover {
+text-decoration: underline;
+}</string>
+              </property>
+              <property name="text">
+               <string>BEENDEN</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph2" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QWidget" name="offline" native="true">
+           <property name="styleSheet">
+            <string notr="true">max-height: 70px;</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QWidget" name="ph11" native="true">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="local">
+              <property name="styleSheet">
+               <string notr="true">min-height: 44px;
+min-width: 250px;
+max-width: 280px;
+max-height: 60px;</string>
+              </property>
+              <property name="text">
+               <string>Starten</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph12" native="true">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QWidget" name="online" native="true">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QWidget" name="ph4" native="true">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="SignIn">
+              <property name="styleSheet">
+               <string notr="true">min-height: 44px;
+min-width: 250px;
+max-width: 280px;
+max-height: 60px;</string>
+              </property>
+              <property name="text">
+               <string>Importieren</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph3" native="true">
+              <property name="styleSheet">
+               <string notr="true">max-width: 20px;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="SignUp">
+              <property name="styleSheet">
+               <string notr="true">min-height: 44px;
+min-width: 250px;
+max-width: 280px;
+max-height: 60px;</string>
+              </property>
+              <property name="text">
+               <string>Exportieren</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph5" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QWidget" name="placeTitle" native="true">
+           <property name="styleSheet">
+            <string notr="true">margin-bottom: 30px;</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QWidget" name="ph" native="true"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="voctitle">
+              <property name="styleSheet">
+               <string notr="true">#voctitle{
+color: white;
+font: 100px &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+}</string>
+              </property>
+              <property name="text">
+               <string> Vokabeltrainer </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph1" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QWidget" name="ph6" native="true">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QWidget" name="titleOff" native="true">
+           <property name="styleSheet">
+            <string notr="true">max-height: 40px;
+margin-top: 20px;</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QWidget" name="ph7" native="true"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="off">
+              <property name="styleSheet">
+               <string notr="true">#off{
+color: white;
+font: 20px &quot;MS Shell Dlg 2&quot;;
+font: bold;
+max-width: 105px;
+}</string>
+              </property>
+              <property name="text">
+               <string>TRAINING</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="ph8" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>SignIn</tabstop>
+  <tabstop>SignUp</tabstop>
+  <tabstop>local</tabstop>
+  <tabstop>powerOff</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

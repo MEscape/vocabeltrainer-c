@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/imagesList">
+        <file>images/add.png</file>
+        <file>images/eye.png</file>
+        <file>images/home.png</file>
+        <file>images/power.png</file>
+    </qresource>
+    <qresource prefix="/language">
+        <file>images/eng.jpg</file>
+        <file>images/ger.png</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>images/vocicon.ico</file>
+    </qresource>
+</RCC>

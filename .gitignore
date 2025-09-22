@@ -1,1 +1,10 @@
 json/client_secret_549100037309-dol8dlsqq8g2ahngii5o4uk1qsmcdo92.apps.googleusercontent.com.json
+
+# Exclude executable directory and all its contents
+Executable Voctrainer/
+*.exe
+*.dll
+
+# Qt build files
+*.pro.user
+*.pro.user.*

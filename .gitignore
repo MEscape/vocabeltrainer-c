@@ -8,7 +8,6 @@ config.json
 
 # Exclude executable directory and all its contents
 Executable Voctrainer/
-*.exe
 *.dll
 
 # Qt build files
